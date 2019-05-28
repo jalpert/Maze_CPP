@@ -1,10 +1,11 @@
+#include <iostream>
 using namespace std;
 
 class Maze {
 
 public:
-  static NUM_ROWS = 7;
-  static NUM_COLUMNS = 7;
+  static int NUM_ROWS = 7;
+  static int NUM_COLUMNS = 7;
   enum Direction {up, down, left, right};
   int x, y;
   int grid[NUM_ROWS][NUM_COLUMNS];
@@ -32,7 +33,7 @@ public:
   }
 
   void print() {
-      String result;
+      string result;
       for (int i = 0; i < NUM_ROWS; i++) {
           for (int j = 0; j < NUM_COLUMNS; j++) {
               result += grid[i][j] + " ";
