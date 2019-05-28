@@ -53,9 +53,27 @@ public:
       cout << result << endl;
   }
 
+  int isGoalState() {
+      return x == NUM_COLUMN - 1 && y == NUM_ROW - 1;
+  }
+
 };
 
 int main() {
-    Maze maze1;
-    maze1.print();
+    Maze maze;
+    maze.print();
+
+    while(!maze.isGoalState()) {
+        cout << "Select either up, down, left or right" << endl;
+        string s;
+        cin >> s;
+        switch(s) {
+            case up: maze.move(up); break;
+            case down: maze.move(down); break;
+            case left: maze.move(left); break;
+            case right: maze.move(right); break;
+            default: cout << "Invalid input. Try again" << endl;
+        }
+        maze.print();
+    }
 }
