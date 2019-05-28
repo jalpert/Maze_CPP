@@ -67,13 +67,19 @@ int main() {
         cout << "Select either up, down, left or right" << endl;
         string s;
         cin >> s;
-        switch(s) {
-            case up: maze.move(up); break;
-            case down: maze.move(down); break;
-            case left: maze.move(left); break;
-            case right: maze.move(right); break;
-            default: cout << "Invalid input. Try again" << endl;
+        
+        if (s == "up") {
+            maze.move(up);
+        } else if (s == "down") {
+            maze.move(down);
+        } else if (s == "left") {
+            maze.move(left);
+        } else if (s == "right") {
+            maze.move(right);
+        } else {
+            cout << "Invalid input. Try again" << endl;
         }
+
         maze.print();
     }
 }
