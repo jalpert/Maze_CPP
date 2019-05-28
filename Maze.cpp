@@ -1,12 +1,13 @@
 #include <iostream>
 using namespace std;
 
+enum Direction {up, down, left, right};
+
 class Maze {
 
 public:
   static int const NUM_ROWS = 7;
   static int const NUM_COLUMNS = 7;
-  enum Direction {up, down, left, right};
   int x, y;
   int grid[NUM_ROWS][NUM_COLUMNS];
 
@@ -54,7 +55,7 @@ public:
   }
 
   int isGoalState() {
-      return x == NUM_COLUMN - 1 && y == NUM_ROW - 1;
+      return x == NUM_COLUMNS - 1 && y == NUM_ROWS - 1;
   }
 
 };
@@ -67,7 +68,7 @@ int main() {
         cout << "Select either up, down, left or right" << endl;
         string s;
         cin >> s;
-        
+
         if (s == "up") {
             maze.move(up);
         } else if (s == "down") {
